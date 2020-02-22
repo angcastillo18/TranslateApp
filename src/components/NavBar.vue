@@ -1,13 +1,30 @@
 <template>
-    <v-container fluid class="px-0 py-0">
-        <v-toolbar color="primary"  dark>
+    <v-container fluid class="px-0 py-0 ">
+        <v-navigation-drawer v-model="sidebar"  absolute temporary>
+        <v-list nav dense rounded>
+            <v-subheader>MENÚ</v-subheader>
+            <v-list-item-group>
+                <v-list-item
+                v-for="item in menuItems"
+                :key="item.title"
+                :to="item.path">
+                <v-list-item-action>
+                </v-list-item-action>
+                <v-list-item-content>{{ item.title }}</v-list-item-content>
+                </v-list-item>
+            </v-list-item-group>
+        </v-list>
+        </v-navigation-drawer>
+
+
+        <v-app-bar color="primary"  dark fixed app>
         <span class="hidden-sm-and-up">
             <v-app-bar-nav-icon @click="sidebar = !sidebar"></v-app-bar-nav-icon>
         </span>
         <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
-          class="shrink mr-2"
+          class="shrink mx-2"
           contain
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
           transition="scale-transition"
@@ -29,22 +46,7 @@
             {{ item.title }}
             </v-btn>
         </v-toolbar-items>
-        </v-toolbar>
-
-
-        <v-navigation-drawer v-model="sidebar" >
-        <v-list>
-            <v-list-item
-            v-for="item in menuItems"
-            :key="item.title"
-            :to="item.path">
-            <v-list-item-action>
-            </v-list-item-action>
-            <v-list-item-content>{{ item.title }}</v-list-item-content>
-            </v-list-item>
-        </v-list>
-        </v-navigation-drawer>
-
+        </v-app-bar>
     </v-container>
 </template>
 
@@ -53,12 +55,12 @@ export default {
     name:'NavBar',
     data(){
             return {
-      appTitle: 'Awesome App',
+      appTitle: 'App Multilenguaje',
       sidebar: false,
       menuItems: [
-          { title: 'Home', path: '/home' },
-          { title: 'Sign Up', path: '/signup' },
-          { title: 'Sign In', path: '/signin' }
+          { title: 'Inicio', path: '/' },
+          { title: 'Sobre Nosotros', path: '/aboutUs' },
+          { title: 'Ejemplo', path: '/example' }
      ]
     }
     }

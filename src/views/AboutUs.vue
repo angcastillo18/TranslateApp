@@ -1,12 +1,15 @@
 <template>
   <v-container>
-    
+      <p>Sobre nosotros</p>
   </v-container>
 </template>
 
 <script>
-  export default {
-    name: 'HelloWorld',
-    
-  }
+export default {
+
+}
 </script>
+
+<style>
+
+</style>
