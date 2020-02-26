@@ -1,6 +1,7 @@
 <template>
   <v-container>
-      <p>Sobre nosotros</p>
+      <h1>{{ $t('sobrenosotros.title') }}</h1>
+      <p>{{ $t('sobrenosotros.content') }}</p>
   </v-container>
 </template>
 

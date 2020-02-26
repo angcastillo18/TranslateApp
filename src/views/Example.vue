@@ -1,6 +1,8 @@
 <template>
   <v-container>
-      Ejemplop1
+      <h2>{{ $t('ejemplo.title') }}</h2>
+      <p>{{ $t('ejemplo.subtitle') }}</p>
+      <p>{{ $t('ejemplo.content') }}</p>
   </v-container>
 </template>
 
